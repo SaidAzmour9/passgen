@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            fontFamily: {
+                'sans': ['JetBrains Mono', 'monospace'],
+            },
+            extend: {
+              colors: {
+                darkGrey: '#24232C',
+                vdark: '#14131B',
+                wht: '#E6E5EA',
+                gren: '#A4FFAF',
+                grey: '#817D92'
+              }
+              
+            }
+          }
+        }
+      </script>
+</head>
+<body class="bg-vdark text-wht font-sans">
+    <main class=" mt-[64px] mx-auto text-center px-4 md:px-[114px] lg:px-[450px]">
+        <h1 class="text-grey mb-[31px] font-bold text-[24px] leading-[31px]">Password Generator</h1>
+        <div class="flex justify-between bg-darkGrey py-[19px] px-[32px]" data-role="rangeslider" data-mini="true">
+            <span class="" id="pass"></span>
+            <img src="Shape.png" alt="Shape" class="cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110" id="cop">
+        </div>
+        <div class="bg-darkGrey mt-6 px-8 py-6">
+            <div class="flex justify-between mb-6">
+                <h2>Character Length</h2>
+                <label for="volume" class="text-gren" id="rangeValue">0</label>
+            </div>
+            <input type="range" id="volume" name="volume" value="0" min="0" max="20" class="w-full accent-gren" />
+            <div class="mt-8" id="checks">
+                <div class="flex gap-[10px] text-right">
+                    <input type="checkbox" class="accent-gren" id="uppers" />
+                    <label for="uppers">Include Uppercase Letters</label>
+                </div>
+                <div class="flex gap-[10px] text-right">
+                    <input type="checkbox" class="accent-gren" id="lowers"/>
+                    <label for="lowers">Include Lowercase Letters</label>
+                </div>
+                <div class="flex gap-[10px] text-right">
+                    <input type="checkbox" class="accent-gren" id="numbers" />
+                    <label for="numbers">Include Numbers</label>
+                </div>
+                <div class="flex gap-[10px] text-right"><input type="checkbox" class="accent-gren" id="symbols" />
+                    <label for="symbols">Include Symbols</label>
+                </div>
+            </div>
+            <button type="button" id="btn" class="flex bg-gren my-[38px] w-full h-[65px] gap-6 justify-center py-[21px] align-center text-vdark">GENERATE <img src="Shape(1).png" alt="go" class="inline-block mt-1"></button>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
